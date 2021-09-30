@@ -1,4 +1,5 @@
 const ForerunnerDB = require("forerunnerdb");
+const collections = require("./collections");
 const fdb = new ForerunnerDB();
 const db = fdb.db("irrelon_pos");
 
@@ -17,6 +18,8 @@ db.persist.auto(true);
 // Note that you can also pass a callback method instead of 'allow' to
 // handle custom access control with logic
 fdb.api.access('irrelon_pos', 'collection', '*', '*', 'allow');
+
+collections.configure(db);
 
 const start = (port = '9010', host = '0.0.0.0') => {
 	// Ask the API server to start listening on all IP addresses assigned to
