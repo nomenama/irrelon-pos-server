@@ -1,7 +1,7 @@
 const ForerunnerDB = require("forerunnerdb");
 const collections = require("./collections");
 const fdb = new ForerunnerDB();
-const db = fdb.db("irrelon_pos");
+const db = fdb.db("irrelon-pos");
 
 // Enable database debug logging to the console (disable this in production)
 db.debug(true);
@@ -17,7 +17,7 @@ db.persist.auto(true);
 // Set access control to allow all HTTP verbs on all collections
 // Note that you can also pass a callback method instead of 'allow' to
 // handle custom access control with logic
-fdb.api.access('irrelon_pos', 'collection', '*', '*', 'allow');
+fdb.api.access('irrelon-pos', 'collection', '*', '*', 'allow');
 
 collections.configure(db);
 
