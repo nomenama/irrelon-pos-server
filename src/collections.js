@@ -13,6 +13,7 @@ const configure = (db) => {
 			"displayName": "Test Menu",
 			"enabled": true,
 			"menuItems": [{
+				"_id": db.objectId(),
 				"name": "Chicken Yum Yum",
 				"price": 5.99,
 				"description": "A tasty chicken dish with honey glazed sauce and boiled white rice.",
@@ -25,6 +26,7 @@ const configure = (db) => {
 				}],
 				"allergens": ["Gluten", "Wheat"],
 				"options": [{
+					"_id": db.objectId(),
 					"name": "Extra Sauce",
 					"price": 0.49,
 					"description": "An extra helping of sauce on the side.",
@@ -41,7 +43,12 @@ const configure = (db) => {
 		}]
 	});
 
-	db.collection("user");
+	db.collection("cart").insert({
+		_id: "myCart",
+		lineItems: {}
+	});
+
+	db.collection("users");
 }
 
 module.exports = {
