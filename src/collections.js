@@ -1,6 +1,6 @@
 const configure = (db) => {
 	db.collection("merchant").ensureIndex({name: 1}, {unique: true});
-	db.collection("menu").ensureIndex({name: 1, merchantId: 1}, {unique: true});
+	db.collection("merchant").ensureIndex({menus: {name: 1}}, {unique: true});
 
 	db.collection("merchant").insert({
 		"_id": "testMerchant",
@@ -27,11 +27,21 @@ const configure = (db) => {
 				"options": [{
 					"name": "Extra Sauce",
 					"price": 0.49,
-					"description": "An extra helping of sauce on the side."
+					"description": "An extra helping of sauce on the side.",
+					"ingredients": [{
+						"name": "Chicken"
+					}, {
+						"name": "Glaze Sauce"
+					}, {
+						"name": "Boiled White Rice"
+					}],
+					"allergens": ["Gluten", "Wheat"],
 				}]
 			}]
 		}]
 	});
+
+	db.collection("user");
 }
 
 module.exports = {
