@@ -43,6 +43,82 @@ const configure = (db) => {
 		}]
 	});
 
+/*	db.collection("merchant").insert({
+		"_id": "SueFoodTruck",
+		"name": "Sue Vietnamese Food Truck",
+		"displayName": "Sue Vietnamese Food Truck",
+		"enabled": true,
+		"menus": [{
+			"_id": "Menu",
+			"name": "Sue Menu",
+			"displayName": "Sue Menu",
+			"enabled": true,
+			"menuItems": [{
+				"_id": db.objectId(),
+				"name": "Chicken Noodle",
+				"price": 6.50,
+				"description": "Special Vietnamese Chicken Noodle",
+				"ingredients": [{
+					"name": "Chicken"
+				}, {
+					"name": "Glaze Sauce"
+				}, {
+					"name": "Broth with vietnamese spices"
+				}],
+				"allergens": ["Gluten", "Wheat", "egg"],
+				"options": [{
+					"_id": db.objectId(),
+					"name": "Thai Tea - (Ice Optional)",
+					"price": 1.5,
+					"description": "Special Thai Tea from Thailand",
+					"ingredients": [{
+						"name": "Milk"
+					}, {
+						"name": "Thai Tea"
+					}, {
+						"name": "Water"
+					}],
+					"allergens": ["Milk"],
+				},{
+					"_id": db.objectId(),
+					"name": "Coke",
+					"price": 1.5,
+					"description": "330ml can of coke",
+					"ingredients": [{
+						"name": "sugar"
+					}, {
+						"name": "Water"
+					}, {
+						"name": "Calcium Bicarbonate"
+					}],
+					"allergens": [""],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "330ml can of Sprite",
+					"ingredients": [{
+						"name": "water"
+					}, {
+						"name": "sugar"
+					}, {
+						"name": "Calcium Bicarbonate"
+					}],
+					"allergens": [""],
+				}, {
+					"_id": db.objectId(),
+					"name": "Mineral Water",
+					"price": 1.5,
+					"description": "A bottle of 500ml Mineral Water",
+					"ingredients": [{
+						"name": "Water"
+					}],
+					"allergens": ["NA"],
+				}]
+			}]
+		}]
+	});*/
+
 	db.collection("cart").insert({
 		_id: "myCart",
 		lineItems: {}

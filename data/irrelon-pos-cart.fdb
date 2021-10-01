@@ -1,1 +1,1 @@
-json::fdb::[{"_id":"myCart","lineItems":[{"menuItemId":"2de564821ead360","optionIds":["2ad8c8817e981e0"],"qty":1,"hash":"\"2de564821ead360\"[\"2ad8c8817e981e0\"]"}]}]
+json::fdb::[{"_id":"myCart","lineItems":[{"menuItemId":"28e82af2c237b40","optionIds":[],"qty":1,"hash":"\"28e82af2c237b40\"[]"}]}]
