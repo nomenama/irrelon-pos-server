@@ -3,121 +3,355 @@ const configure = (db) => {
 	db.collection("merchant").ensureIndex({menus: {name: 1}}, {unique: true});
 
 	db.collection("merchant").insert({
-		"_id": "testMerchant",
-		"name": "Irrelon Test Merchant",
-		"displayName": "Test Merchant",
+		"_id": "SueFoodTruck",
+		"name": "Sue Food Truck",
+		"displayName": "Sue Food Truck",
 		"enabled": true,
 		"menus": [{
-			"_id": "testMenu",
-			"name": "Irrelon Test Menu",
-			"displayName": "Test Menu",
+			"_id": "Menu",
+			"name": "Menu",
+			"displayName": "Menu",
 			"enabled": true,
 			"menuItems": [{
 				"_id": db.objectId(),
-				"name": "Chicken Yum Yum",
-				"price": 5.99,
-				"description": "A tasty chicken dish with honey glazed sauce and boiled white rice.",
+				"name": "Chicken Noodles",
+				"price": 6.5,
+				"description": "A tasty chicken noodle",
 				"ingredients": [{
 					"name": "Chicken"
 				}, {
-					"name": "Glaze Sauce"
+					"name": "Noodle"
 				}, {
-					"name": "Boiled White Rice"
+					"name": "Chicken Broth"
 				}],
 				"allergens": ["Gluten", "Wheat"],
 				"options": [{
 					"_id": db.objectId(),
-					"name": "Extra Sauce",
-					"price": 0.49,
-					"description": "An extra helping of sauce on the side.",
-					"ingredients": [{
-						"name": "Chicken"
-					}, {
-						"name": "Glaze Sauce"
-					}, {
-						"name": "Boiled White Rice"
-					}],
-					"allergens": ["Gluten", "Wheat"],
-				}]
-			}]
-		}]
-	});
-
-/*	db.collection("merchant").insert({
-		"_id": "SueFoodTruck",
-		"name": "Sue Vietnamese Food Truck",
-		"displayName": "Sue Vietnamese Food Truck",
-		"enabled": true,
-		"menus": [{
-			"_id": "Menu",
-			"name": "Sue Menu",
-			"displayName": "Sue Menu",
-			"enabled": true,
-			"menuItems": [{
-				"_id": db.objectId(),
-				"name": "Chicken Noodle",
-				"price": 6.50,
-				"description": "Special Vietnamese Chicken Noodle",
-				"ingredients": [{
-					"name": "Chicken"
-				}, {
-					"name": "Glaze Sauce"
-				}, {
-					"name": "Broth with vietnamese spices"
-				}],
-				"allergens": ["Gluten", "Wheat", "egg"],
-				"options": [{
-					"_id": db.objectId(),
 					"name": "Thai Tea - (Ice Optional)",
 					"price": 1.5,
-					"description": "Special Thai Tea from Thailand",
+					"description": "Thai tea with condensed milk",
 					"ingredients": [{
-						"name": "Milk"
+						"name": "Thai tea"
 					}, {
-						"name": "Thai Tea"
+						"name": "Condensed Milk"
 					}, {
 						"name": "Water"
 					}],
-					"allergens": ["Milk"],
-				},{
-					"_id": db.objectId(),
-					"name": "Coke",
-					"price": 1.5,
-					"description": "330ml can of coke",
-					"ingredients": [{
-						"name": "sugar"
-					}, {
-						"name": "Water"
-					}, {
-						"name": "Calcium Bicarbonate"
-					}],
-					"allergens": [""],
-				}, {
-					"_id": db.objectId(),
-					"name": "Sprite",
-					"price": 1.5,
-					"description": "330ml can of Sprite",
-					"ingredients": [{
-						"name": "water"
-					}, {
-						"name": "sugar"
-					}, {
-						"name": "Calcium Bicarbonate"
-					}],
-					"allergens": [""],
+					"allergens": ["Lactose"],
 				}, {
 					"_id": db.objectId(),
 					"name": "Mineral Water",
 					"price": 1.5,
 					"description": "A bottle of 500ml Mineral Water",
 					"ingredients": [{
+						"name": "Mineral Water"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Sprite",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Coke",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}]
+			}, {
+				"_id": db.objectId(),
+				"name": "Beef Noodles",
+				"price": 6.5,
+				"description": "A tasty beef noodle",
+				"ingredients": [{
+					"name": "beef"
+				}, {
+					"name": "Noodle"
+				}, {
+					"name": "Chicken Broth"
+				}],
+				"allergens": ["Gluten", "Wheat"],
+				"options": [{
+					"_id": db.objectId(),
+					"name": "Thai Tea - (Ice Optional)",
+					"price": 1.5,
+					"description": "Thai tea with condensed milk",
+					"ingredients": [{
+						"name": "Thai tea"
+					}, {
+						"name": "Condensed Milk"
+					}, {
 						"name": "Water"
 					}],
-					"allergens": ["NA"],
+					"allergens": ["Lactose"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Mineral Water",
+					"price": 1.5,
+					"description": "A bottle of 500ml Mineral Water",
+					"ingredients": [{
+						"name": "Mineral Water"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Sprite",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Coke",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}]
+			}, {
+				"_id": db.objectId(),
+				"name": "Chicken Rice",
+				"price": 6.5,
+				"description": "A tasty chicken rice",
+				"ingredients": [{
+					"name": "Chicken"
+				}, {
+					"name": "Jasmine Rice"
+				}, {
+					"name": "Soy Sauce"
+				}],
+				"allergens": ["Gluten", "Wheat"],
+				"options": [{
+					"_id": db.objectId(),
+					"name": "Thai Tea - (Ice Optional)",
+					"price": 1.5,
+					"description": "Thai tea with condensed milk",
+					"ingredients": [{
+						"name": "Thai tea"
+					}, {
+						"name": "Condensed Milk"
+					}, {
+						"name": "Water"
+					}],
+					"allergens": ["Lactose"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Mineral Water",
+					"price": 1.5,
+					"description": "A bottle of 500ml Mineral Water",
+					"ingredients": [{
+						"name": "Mineral Water"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Sprite",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Coke",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}]
+			}, {
+				"_id": db.objectId(),
+				"name": "Crispy Fried Chicken",
+				"price": 4.5,
+				"description": "Crispy Fried Chicken cooked to perfection",
+				"ingredients": [{
+					"name": "Chicken"
+				}, {
+					"name": "Spices"
+				}],
+				"allergens": ["chicken"],
+				"options": [{
+					"_id": db.objectId(),
+					"name": "Plain Jasmine Rice",
+					"price": 1.5,
+					"description": "Plain Jasmine Rice",
+					"ingredients": [{
+						"name": "Thai Jasmine Rice"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Thai Tea - (Ice Optional)",
+					"price": 1.5,
+					"description": "Thai tea with condensed milk",
+					"ingredients": [{
+						"name": "Thai tea"
+					}, {
+						"name": "Condensed Milk"
+					}, {
+						"name": "Water"
+					}],
+					"allergens": ["Lactose"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Mineral Water",
+					"price": 1.5,
+					"description": "A bottle of 500ml Mineral Water",
+					"ingredients": [{
+						"name": "Mineral Water"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Sprite",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Coke",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}]
+			}, {
+				"_id": db.objectId(),
+				"name": "Chicken Red Curry",
+				"price": 4.5,
+				"description": "Chicken Red Curry Thai Style",
+				"ingredients": [{
+					"name": "Chicken"
+				}, {
+					"name": "Thai Spices"
+				}],
+				"allergens": ["chicken"],
+				"options": [{
+					"_id": db.objectId(),
+					"name": "Plain Jasmine Rice",
+					"price": 1.5,
+					"description": "Plain Jasmine Rice",
+					"ingredients": [{
+						"name": "Thai Jasmine Rice"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Thai Tea - (Ice Optional)",
+					"price": 1.5,
+					"description": "Thai tea with condensed milk",
+					"ingredients": [{
+						"name": "Thai tea"
+					}, {
+						"name": "Condensed Milk"
+					}, {
+						"name": "Water"
+					}],
+					"allergens": ["Lactose"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Mineral Water",
+					"price": 1.5,
+					"description": "A bottle of 500ml Mineral Water",
+					"ingredients": [{
+						"name": "Mineral Water"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Sprite",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Coke",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}]
+			}, {
+				"_id": db.objectId(),
+				"name": "Spring Rolls",
+				"price": 4.5,
+				"description": "Homemade Spring Rolls",
+				"ingredients": [{
+					"name": "Chicken"
+				}, {
+					"name": "Thai Spices"
+				}],
+				"allergens": ["chicken"],
+				"options": [{
+					"_id": db.objectId(),
+					"name": "Thai Tea - (Ice Optional)",
+					"price": 1.5,
+					"description": "Thai tea with condensed milk",
+					"ingredients": [{
+						"name": "Thai tea"
+					}, {
+						"name": "Condensed Milk"
+					}, {
+						"name": "Water"
+					}],
+					"allergens": ["Lactose"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Mineral Water",
+					"price": 1.5,
+					"description": "A bottle of 500ml Mineral Water",
+					"ingredients": [{
+						"name": "Mineral Water"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Sprite",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
+				}, {
+					"_id": db.objectId(),
+					"name": "Sprite",
+					"price": 1.5,
+					"description": "A can of 330ml Coke",
+					"ingredients": [{
+						"name": "Bicarbonate Drink"
+					}],
+					"allergens": ["None"],
 				}]
 			}]
 		}]
-	});*/
+	});
+
 
 	db.collection("cart").insert({
 		_id: "myCart",
@@ -125,7 +359,7 @@ const configure = (db) => {
 	});
 
 	db.collection("users");
-}
+};
 
 module.exports = {
 	configure

@@ -1,1 +1,1 @@
-json::fdb::[{"_id":"myCart","lineItems":[{"menuItemId":"28e82af2c237b40","optionIds":[],"qty":1,"hash":"\"28e82af2c237b40\"[]"}]}]
+json::fdb::[{"_id":"myCart","lineItems":[{"menuItemId":"11c5935055b19a0","optionIds":["3228046d05b2b20"],"qty":1,"hash":"\"11c5935055b19a0\"[\"3228046d05b2b20\"]"},{"menuItemId":"2701f0f40db4500","optionIds":["1b634f7eeb647d0"],"qty":1,"hash":"\"2701f0f40db4500\"[\"1b634f7eeb647d0\"]"}]}]
